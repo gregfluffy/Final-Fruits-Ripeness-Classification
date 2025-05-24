@@ -1,4 +1,5 @@
-# pip install -r requirements.txt  
+# conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1
+# pip install "tensorflow==2.10"
 
 import numpy as np
 import pandas as pd
