@@ -24,11 +24,16 @@
 | 框架     | Tensorflow, Keras |
 
 ## 安裝套件
-- matplotlib==3.7.2
-- numpy==1.24.3
+在終端機執行以下指令  
+conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1  
+pip install "tensorflow==2.10"  
+pip install -r requirements.txt  
+
+### requirements.txt內包含以下套件  
+- matplotlib==3.7.5
+- numpy==1.24.4
 - opencv-python==4.11.0.86
 - pandas==2.0.3
-- scikit-learn==1.3.0
+- scikit-learn==1.3.2
 - seaborn==0.13.2
-- tensorflow-gpu==2.10.0
 - tqdm==4.67.1
