@@ -23,7 +23,7 @@
 | 編碼格式 | UTF-8 |
 | 框架     | Tensorflow, Keras |
 
-## 安裝套件
+## 安裝套件(需下載requirements.txt)
 在終端機執行以下指令  
 conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1  
 pip install "tensorflow==2.10"  
