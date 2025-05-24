@@ -6,8 +6,9 @@
 # Miniconda 3, Python 3.8
 """
 在終端機執行(Execute in terminal)
-conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1
-pip install "tensorflow==2.10"
+1. conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1
+2. pip install "tensorflow==2.10"
+3. pip install -r requirements.txt
 """
 
 import numpy as np
