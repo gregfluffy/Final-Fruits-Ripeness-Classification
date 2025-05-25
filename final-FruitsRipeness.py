@@ -4,19 +4,20 @@
 # Python 影像分類
 # 框架：Tensorflow, Keras
 # Miniconda 3, Python 3.8
+# Github: https://github.com/gregfluffy/Final-Fruits-Ripeness-Classification
 """
 在終端機執行(Execute in terminal)
-1. conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1
-2. pip install "tensorflow==2.10"
-3. pip install -r requirements.txt
+1. conda activate <your_ProjectName>
+2. conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1
+3. pip install "tensorflow==2.10"
+4. pip install -r requirements.txt
 """
-
 import numpy as np
 import os
 import cv2
 from tqdm import tqdm
 import matplotlib.pyplot as plt
-import seaborn as sns
+# import seaborn as sns
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, classification_report
@@ -66,8 +67,10 @@ plt.show()
 
 # 分割資料集為訓練集和測試集
 X_train, X_test, y_train, y_test = train_test_split(data, labels, test_size=0.2, random_state=42)
+
 # 載入 EfficientNet 預訓練模型
-base_model = EfficientNetB0(weights='imagenet', include_top=False, input_shape=(150, 150, 3))
+base_model = EfficientNetB0(weights='imagenet', include_top=False,
+                            input_shape=(150, 150, 3))
 base_model.trainable = False
 
 # 建立完整模型
@@ -80,13 +83,19 @@ model = Sequential([
 ])
 
 # 編譯模型
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer='adam', loss='categorical_crossentropy',
+              metrics=['accuracy'])
 
 # 定義 EarlyStopping 回調
-early_stopping = EarlyStopping(monitor='val_accuracy', patience=5, restore_best_weights=True)
+early_stopping = EarlyStopping(monitor='val_accuracy',
+                               patience=5,
+                               restore_best_weights=True)
 
 # 訓練模型
-history = model.fit(X_train, y_train, epochs=20, validation_data=(X_test, y_test), callbacks=[early_stopping])
+history = model.fit(X_train, y_train,
+                    epochs=50,
+                    validation_data=(X_test, y_test),
+                    callbacks=[early_stopping])
 
 # 繪製訓練和驗證的準確率和損失
 plt.figure(figsize=(12, 4))
@@ -142,7 +151,7 @@ class Visualization:
         plt.tight_layout()
         plt.show()
 
-# 假設 tr_dl 和 ts_dl 是你的訓練和測試數據，並且已經加載了圖像和標籤
-# 這裡我們將使用 X_train 和 y_train 作為示例數據
+# tr_dl 和 ts_dl 是訓練和測試數據，並且已經加載了圖像和標籤
+# 這裡使用 X_train 和 y_train 作為示例數據
 vis_datas = [(X_train[i], np.argmax(y_train[i])) for i in range(min(18, len(X_train)))]  # 取前 18 張圖像
 vis = Visualization(vis_datas=vis_datas, n_ims=18, rows=6, cls_names=categories, cls_counts=class_counts)
