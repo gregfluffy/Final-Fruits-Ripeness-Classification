@@ -38,3 +38,6 @@
 - scikit-learn==1.3.2
 - seaborn==0.13.2
 - tqdm==4.67.1
+
+# 專題簡報(Canva)
+[Python程式設計期末專題-水果成熟度影像分類](https://www.canva.com/design/DAGnIx1tHu0/RZIUrMDdMvjxLpCMA9KxFQ/edit?utm_content=DAGnIx1tHu0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
