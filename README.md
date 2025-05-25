@@ -24,7 +24,7 @@
 | 框架     | Tensorflow, Keras |
 
 ## 安裝套件(需下載requirements.txt)
-在終端機執行(Execute in terminal)  
+### 在終端機執行(Execute in terminal)
 1. conda activate <your_ProjectName>  
 2. conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1  
 3. pip install "tensorflow==2.10"  
