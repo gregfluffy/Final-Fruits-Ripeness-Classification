@@ -26,6 +26,12 @@
 | 編碼格式 | UTF-8 |
 | 框架     | Tensorflow, Keras |
 
+## 演算法
+### 演算法： EfficientNetB0  
+### 核心概念:
+EfficientNet是一種高效的卷積神經網絡（CNN）架構，其核心思想是通過複合縮放方法，同時調整網絡的深度、寬度和解析度，以達到最佳性能和資源利用率。 
+EfficientNet使用了一種稱為MBConv的輕量級卷積塊，並通過自動化方法平衡網絡的三個維度，從而在保持模型高效運行的同時，顯著提升模型的識別精度。
+
 ## 安裝套件(需下載requirements.txt)
 ### 在終端機執行(Execute in terminal)
 1. conda activate <your_ProjectName>  
