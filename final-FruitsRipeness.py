@@ -93,7 +93,7 @@ early_stopping = EarlyStopping(monitor='val_accuracy',
 
 # 訓練模型
 history = model.fit(X_train, y_train,
-                    epochs=50,
+                    epochs=30,
                     validation_data=(X_test, y_test),
                     callbacks=[early_stopping])
 
