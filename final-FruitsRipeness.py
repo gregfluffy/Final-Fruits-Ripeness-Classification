@@ -17,7 +17,6 @@ import os
 import cv2
 from tqdm import tqdm
 import matplotlib.pyplot as plt
-# import seaborn as sns
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, classification_report
