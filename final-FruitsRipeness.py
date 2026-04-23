@@ -2,9 +2,9 @@
 # Programmer: 411203479, 李冠諭
 # Date: 2025/05/25
 # Python 影像分類
-# 框架：Tensorflow, Keras
+# 框架：TensorFlow, Keras
 # Miniconda 3, Python 3.8
-# Github: https://github.com/gregfluffy/Final-Fruits-Ripeness-Classification
+# GitHub: https://github.com/gregfluffy/Final-Fruits-Ripeness-Classification
 """
 在終端機執行(Execute in terminal)
 1. conda activate <your_ProjectName>
@@ -29,7 +29,7 @@ from tensorflow.keras.applications.efficientnet import preprocess_input
 from tensorflow.keras.callbacks import EarlyStopping
 
 # 定義資料路徑及類別
-data_dir = 'dataset/train'
+data_dir = 'dataset'
 categories = ['freshapples', 'freshbanana', 'freshoranges', 'rottenapples',
               'rottenbanana', 'rottenoranges', 'unripe apple', 'unripe banana', 'unripe orange']
 
