@@ -43,7 +43,7 @@ dataset/
  ├── rottenapples/
  ├── rottenbanana/
  ├── rottenoranges/
- ├── unripe apples/
+ ├── unripe apple/
  ├── unripe banana/
  └── unripe orange/
 ```
