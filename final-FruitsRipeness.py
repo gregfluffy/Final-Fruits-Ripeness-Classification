@@ -105,11 +105,11 @@ early_stopping = EarlyStopping(monitor='val_accuracy',
 
 # 訓練模型
 history = model.fit(X_train, y_train,
-                    epochs=30,
+                    epochs=50,
                     validation_data=(X_test, y_test),
                     callbacks=[early_stopping])
 
-# 繪製訓練和驗證的準確率和損失
+# 繪製訓練和驗證的準確率和損5失
 plt.figure(figsize=(12, 4))
 plt.subplot(1, 2, 1)
 plt.plot(history.history['accuracy'], label='Train Accuracy')
@@ -145,7 +145,6 @@ print(class_report)
 def plot_confusion_matrix(matrix, labels):
     plt.figure(figsize=(10, 8))
     # 使用 seaborn 繪製熱圖
-    # annot=True 顯示數字, fmt='d' 格式為整數, cmap 選擇顏色 (如 'Blues', 'Greens', 'YlGnBu')
     sns.heatmap(matrix, annot=True, fmt='d', cmap='Blues',
                 xticklabels=labels, yticklabels=labels)
 
@@ -162,7 +161,6 @@ plot_confusion_matrix(conf_matrix, CATEGORIES)
 
 # 可視化類別
 class Visualization:
-    # 建議將傳入參數名稱稍微修改，避免與外部變數混淆
     def __init__(self, data_samples, n_ims, rows, cls_names=None):
         self.vis_datas = data_samples
         self.n_ims = n_ims
